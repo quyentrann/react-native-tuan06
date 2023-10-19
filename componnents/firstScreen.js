@@ -2,21 +2,20 @@ import React from "react";
 import { Image, Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import { FontAwesome, MaterialIcons, AntDesign } from "@expo/vector-icons";
 
-export default function Hinh2({route,navigation}) {
+export default function FirstScreen({route,navigation}) {
   return (
     <View style={styles.container}>
-     <View style={styles.containerHeader}>
-      <Image
-      style={{height:"100%",width:"90%"}}
-      source={require("../img/blue.jpg")}
-     />
-     </View>
-
-     <View style={styles.containerBody}>
-      <Text style={styles.textInfo}>
-        Điện thoại vsmart Joy3 - Hàng chính hãng
-      </Text>
-      <View
+      <View style={styles.containerHeader}>
+        <Image
+          style={{ height: "100%", width: "90%" }}
+          source={require(`../img/${route.params?route.params:"blue"}.jpg`)}
+        />
+      </View>
+      <View style={styles.containerBody}>
+        <Text style={styles.textInfo}>
+          Điện thoại vsmart Joy 3 - Chính Hãng
+        </Text>
+        <View
           style={{
             flexDirection: "row",
             marginTop: 10,
@@ -58,31 +57,26 @@ export default function Hinh2({route,navigation}) {
           </View>
           <Text>(Xem 828 đánh giá)</Text>
         </View>
-
-        <View style={{flexDirection:"row", alignItems: "flex-end"}}>
-        <Text style={{ fontWeight: "bold", fontSize: 25 }}>1.790.000 đ</Text>
-        <View 
-        style={{
-          marginBottom: 5,
-          color: "gray",
-          fontSize: 40,
-          marginLeft: 70,
-          alignItems:"center"
-        }}
-            >
-             <Text style={{textDecorationLine:"line-through"}}>
-             1.790.000 đ
-           </Text>
-        </View>
-        
+        <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
+          <Text style={{ fontWeight: "bold", fontSize: 25 }}>1.790.000 đ</Text>
+          <Text
+            style={{
+              textDecorationLine: "line-throutegh",
+              marginBottom: 5,
+              color: "gray",
+              fontSize: 17,
+              marginLeft: 30,
+            }}
+          >
+            1.790.000 đ
+          </Text>
         </View>
         <View style={{ flexDirection: "row", marginTop: 10, alignItems:"flex-end", }}>
           <Text style={{ fontWeight: "bold", color: "red", marginRight:20 }}>
             Ở ĐÂU RẺ HƠN HOÀN TIỀN
           </Text>
-          <AntDesign name="questioncircleo" size={20} color="black" />
+          <AntDesign name="questioncircleo" size={24} color="black" />
         </View>
-        
         <TouchableOpacity
           style={styles.selectColor}
           onPress={() => {
@@ -118,39 +112,34 @@ export default function Hinh2({route,navigation}) {
             Chọn Mua
           </Text>
         </TouchableOpacity>
-     </View>
-    
-
-      
+      </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+let styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
-  containerHeader:{
-    flex:6,
-    justifyContent:"center",
-    alignItems:"center",
-    padding:10,
+  containerHeader: {
+    flex: 6,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 10,
   },
-  containerBody:{
-    flex:4,
-    backgroundColor:"white",
-    paddingHorizontal:20,
+  containerBody: {
+    flex: 4,
+    backgroutendColor: "white",
+    paddingHorizontal: 20,
   },
-  textInfo:{
-    fontWeight:"bold",
-    fontSize:18,
+  textInfo: {
+    fontWeight: "bold",
+    fontSize: 18,
   },
-
-  star:{
-    flexDirection:"row",
+  star: {
+    flexDirection: "row",
   },
-  eleStar:{
+  eleStar: {
     marginRight: 10,
   },
   selectColor: {
@@ -164,4 +153,3 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-

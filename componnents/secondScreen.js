@@ -1,22 +1,20 @@
-import React, {useState} from "react";
+import React from "react";
 import {View, Text, TouchableOpacity, StyleSheet,Image} from 'react-native'
-import { useNavigation, useRoute } from '@react-navigation/native';
 
-export default function Hinh1({route,navigation}){
-    // console.log(navigation);
-    // console.log(route);
-    // var [img,setImage] = React.useState(route.params)
+export default function SecondScreen({route,navigation}){
+    console.log(navigation);
+    console.log(route);
+    var [img,setImage] = React.useState(route.params)
     return(
         <View style={styles.container}>
             <View style={styles.containerHeader}>
-
-                 <Image
+                <Image
                     style={{height:135, width:110 }}
-                     source={require("../img/blue.jpg")}
+                    source={require(`../img/${img}.jpg`)}
                 />
                 <View style={styles.viewInfo}>
                     <Text style={{fontWeight:"600",fontSize:19, width:200}}>Điệm thoại Vsmart Joy 3 Hàng chính hãng</Text>
-                    {/* <Text style={{fontWeight:"600",fontSize:15}} >Màu: {img}</Text> */}
+                    <Text style={{fontWeight:"600",fontSize:15}} >Màu: {img}</Text>
                     <View style={{fontWeight:"600",flexDirection:"row"}}>
                         <Text style={{fontWeight:"600",fontSize:15}}>Cũng cấp bởi: </Text>
                         <Text style={{fontWeight:"bold", fontSize:15}}>Tiki Tradding</Text>
